@@ -48,14 +48,23 @@ class X509SelfSignedCertGenerator:
         """
         if not self.private_key:
             self.generate_private_key()
+        
+        name_attributes = []
+        if self.country_name:
+            name_attributes.append(x509.NameAttribute(NameOID.COUNTRY_NAME, self.country_name))
+        if self.state_or_province_name:
+            name_attributes.append(x509.NameAttribute(NameOID.STATE_OR_PROVINCE_NAME, self.state_or_province_name))
+        if self.locality_name:
+            name_attributes.append(x509.NameAttribute(NameOID.LOCALITY_NAME, self.locality_name))
+        if self.organization_name:
+            name_attributes.append(x509.NameAttribute(NameOID.ORGANIZATION_NAME, self.organization_name))
+        if self.common_name:
+            name_attributes.append(x509.NameAttribute(NameOID.COMMON_NAME, self.common_name))
+        else:
+            raise ValueError("Common Name is required.")
 
         # Define subject and issuer (for self-signed, they are the same)
-        subject = issuer = x509.Name([
-            x509.NameAttribute(NameOID.COUNTRY_NAME, self.country_name),
-            x509.NameAttribute(NameOID.STATE_OR_PROVINCE_NAME, self.state_or_province_name),
-            x509.NameAttribute(NameOID.LOCALITY_NAME, self.locality_name),
-            x509.NameAttribute(NameOID.ORGANIZATION_NAME, self.organization_name),
-            x509.NameAttribute(NameOID.COMMON_NAME, self.common_name),])
+        subject = issuer = x509.Name(name_attributes)
 
         # Certificate validity period
         valid_from = datetime.datetime.utcnow()
@@ -154,22 +163,22 @@ class X509SelfSignedWindow(QWidget):
 
         state_or_province_label = QLabel("State/Province:", parent=self)
         state_or_province_label.setGeometry(150, 10, 110, 50)
-        self.state_or_province_input = DefaultQLineEditStyle(parent=self, placeholder_text="e.g: California")
+        self.state_or_province_input = DefaultQLineEditStyle(parent=self, placeholder_text="optional: e.g: California")
         self.state_or_province_input.setGeometry(10, 60, 325, 50)
 
         locality_label = QLabel("Locality:", parent=self)
         locality_label.setGeometry(450, 10, 100, 50)
-        self.locality_input = DefaultQLineEditStyle(parent=self, placeholder_text="e.g: San Fransisco")
+        self.locality_input = DefaultQLineEditStyle(parent=self, placeholder_text="optional: e.g: San Fransisco")
         self.locality_input.setGeometry(350, 60, 340, 50)
 
         organization_label = QLabel("Organization:", parent=self)
         organization_label.setGeometry(150, 130, 100, 50)
-        self.organization_input = DefaultQLineEditStyle(parent=self, placeholder_text="e.g: My Organization")
+        self.organization_input = DefaultQLineEditStyle(parent=self, placeholder_text="optional: e.g: My Organization")
         self.organization_input.setGeometry(10, 180, 325, 50)
 
         common_name_label = QLabel("Common name:", parent=self)
         common_name_label.setGeometry(450, 130, 110, 50)
-        self.common_name_input = DefaultQLineEditStyle(parent=self, placeholder_text="e.g: www.example.com")
+        self.common_name_input = DefaultQLineEditStyle(parent=self, placeholder_text="required: e.g: localhost")
         self.common_name_input.setGeometry(350, 180, 340, 50)
 
         country_name_label = QLabel("Country name:", parent=self)
@@ -214,13 +223,7 @@ class X509SelfSignedWindow(QWidget):
             downloads_path = Path.home() / "Downloads" / "x509_self_signed"
             downloads_path.mkdir(parents=True, exist_ok=True)
 
-            if not self.state_or_province_input.text():
-                raise ValueError('No state or province entered.')
-            elif not self.locality_input.text():
-                raise ValueError('No locality entered.')
-            elif not self.organization_input.text():
-                raise ValueError('No organization entered.')
-            elif not self.common_name_input.text():
+            if not self.common_name_input.text():
                 raise ValueError('No common name entered.')
 
             country = self.country_name_options.currentText()
