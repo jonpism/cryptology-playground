@@ -12,10 +12,6 @@ from DefaultStyles.qline_edit_style             import DefaultQLineEditStyle
 from pathlib                                    import Path
 import datetime, sys, os
 
-timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-downloads_path = Path.home() / "Downloads" / f"x509_self_signed_{timestamp}"
-downloads_path.mkdir(parents=True, exist_ok=False)
-
 class X509SelfSignedCertGenerator:
     def __init__(
             self, country_name, state_or_province_name, locality_name, organization_name, common_name, 
@@ -224,6 +220,9 @@ class X509SelfSignedWindow(QWidget):
         
     def call_x509(self):
         try:
+            timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+            downloads_path = Path.home() / "Downloads" / f"x509_self_signed_{timestamp}"
+            downloads_path.mkdir(parents=True, exist_ok=False)
             if not self.common_name_input.text():
                 raise ValueError('No common name entered.')
 
