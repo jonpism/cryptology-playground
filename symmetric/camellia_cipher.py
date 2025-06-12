@@ -5,7 +5,7 @@ from DefaultStyles.qline_edit_style import DefaultQLineEditStyle
 from cryptography.hazmat.primitives import padding
 from base64                         import b64encode, b64decode
 from os                             import urandom 
-import camellia
+'''import camellia
 
 BLOCK_SIZE = camellia.block_size
 
@@ -47,7 +47,7 @@ class CamelliaDecryption:
         plaintext = unpadder.update(decrypted_data) + unpadder.finalize()
 
         return plaintext.decode('utf-8')
-
+'''
 class CamelliaWindow(QWidget):
 
     def __init__(self, theme_mode):
@@ -145,8 +145,8 @@ class CamelliaWindow(QWidget):
                     key = b64decode(key_b64)
                     ciphertext = b64decode(ciphertext_b64)
 
-                    decryption = CamelliaDecryption(key, ciphertext)
-                    plaintext = decryption.plaintext
+                    # decryption = CamelliaDecryption(key, ciphertext)
+                    plaintext = "" # decryption.plaintext
 
                     self.original_msg_label.clear()
                     self.original_msg_label.setHtml(f"<b>Decrypted text:</b><br>{plaintext}")
@@ -169,8 +169,8 @@ class CamelliaWindow(QWidget):
                 key_length = int(self.key_input.currentText())
                 key = urandom(key_length)
 
-                encryption = CamelliaEncryption(key, mode, plaintext)
-                ciphertext = encryption.ciphertext
+                # encryption = CamelliaEncryption(key, mode, plaintext)
+                ciphertext = "" # encryption.ciphertext
 
                 self.encrypted_text_label.clear()
                 self.encrypted_text_label.setHtml(f"<b>Encrypted text:</b><br>{b64encode(ciphertext).decode()}")
