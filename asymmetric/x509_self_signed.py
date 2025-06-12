@@ -12,10 +12,14 @@ from DefaultStyles.qline_edit_style             import DefaultQLineEditStyle
 from pathlib                                    import Path
 import datetime, sys, os
 
+timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+downloads_path = Path.home() / "Downloads" / f"x509_self_signed_{timestamp}"
+downloads_path.mkdir(parents=True, exist_ok=False)
+
 class X509SelfSignedCertGenerator:
     def __init__(
             self, country_name, state_or_province_name, locality_name, organization_name, common_name, 
-            key_size=2048, san_names=None, valid_days=365):
+            key_size=4096, san_names=None, valid_days=None):
         """
         Initialize with common certificate attributes and options for SAN and validity period.
         :param san_names: List of SAN names (domain names or IPs), default is None.
@@ -28,7 +32,7 @@ class X509SelfSignedCertGenerator:
         self.common_name = common_name
         self.key_size = key_size
         self.san_names = san_names if san_names else []
-        self.valid_days = valid_days
+        self.valid_days = valid_days if valid_days else 365
         self.private_key = None
         self.cert = None
 
@@ -194,7 +198,7 @@ class X509SelfSignedWindow(QWidget):
 
         valid_days_label = QLabel("Valid days:", parent=self)
         valid_days_label.setGeometry(200, 230, 120, 50)
-        self.valid_days_input = DefaultQLineEditStyle(parent=self, placeholder_text="Default: 730", int_validator=True)
+        self.valid_days_input = DefaultQLineEditStyle(parent=self, placeholder_text="Default: 365", int_validator=True)
         self.valid_days_input.setGeometry(200, 280, 100, 50)
 
         san_names_label = QLabel("SAN (subject alternative names):", parent=self)
@@ -220,9 +224,6 @@ class X509SelfSignedWindow(QWidget):
         
     def call_x509(self):
         try:
-            downloads_path = Path.home() / "Downloads" / "x509_self_signed"
-            downloads_path.mkdir(parents=True, exist_ok=True)
-
             if not self.common_name_input.text():
                 raise ValueError('No common name entered.')
 
@@ -242,7 +243,7 @@ class X509SelfSignedWindow(QWidget):
                 organization_name = organization,
                 common_name = common_name,
                 san_names = san_names if san_names else [],
-                valid_days = int(valid_days) if valid_days else 730)
+                valid_days = int(valid_days) if valid_days else 365)
 
             # Generate private key and self-signed certificate
             generator.generate_self_signed_cert()
