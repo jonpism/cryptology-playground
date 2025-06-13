@@ -105,7 +105,7 @@ class X509SelfSignedCertGenerator:
         # Self-sign the certificate with its own private key
         self.cert = cert_builder.sign(
             private_key=self.private_key,
-            algorithm=hashes.SHA256(),
+            algorithm=hashes.SHA512(),
             backend=default_backend())
         return self.cert
 
@@ -232,7 +232,12 @@ class X509SelfSignedWindow(QWidget):
             organization = self.organization_input.text()
             common_name = self.common_name_input.text()
             san_names = [name.strip() for name in self.san_names_input.text().split(',')] if self.san_names_input.text() else []
-            valid_days = self.valid_days_input.text()
+            if self.valid_days_input.text():
+                valid_days = self.valid_days_input.text()
+                if int(valid_days) < 1:
+                    raise ValueError('Please enter a positive number for valid days.')
+            else:
+                valid_days = 365
             passphrase = self.passphrase_input.text()
 
             generator = X509SelfSignedCertGenerator(
@@ -242,7 +247,7 @@ class X509SelfSignedWindow(QWidget):
                 organization_name = organization,
                 common_name = common_name,
                 san_names = san_names if san_names else [],
-                valid_days = int(valid_days) if valid_days else 365)
+                valid_days = int(valid_days))
 
             # Generate private key and self-signed certificate
             generator.generate_self_signed_cert()
