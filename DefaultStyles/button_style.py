@@ -65,7 +65,7 @@ class DefaultButtonStyle(QtWidgets.QPushButton):
         self.setObjectName(object_name if object_name else text)
 
         font = QtGui.QFont()
-        font.setPointSize(11)
+        font.setPointSize(10)
         font.setBold(bold if bold else False)
         self.setFont(font)
         

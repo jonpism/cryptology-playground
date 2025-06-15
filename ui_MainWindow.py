@@ -33,7 +33,7 @@ class Ui_MainWindow(object):
         self.Title = QtWidgets.QLabel(parent=self.centralwidget)
         self.Title.setGeometry(QtCore.QRect(340, 0, 631, 91))
         font = QtGui.QFont()
-        font.setPointSize(24)
+        font.setPointSize(20)
         font.setBold(True)
         self.Title.setFont(font)
         self.Title.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
@@ -149,7 +149,7 @@ class Ui_MainWindow(object):
         self.timeLabel.setGeometry(QtCore.QRect(1070, 40, 240, 21))
         font = QtGui.QFont()
         font.setBold(True)
-        font.setPointSize(13)
+        font.setPointSize(11)
         self.timeLabel.setFont(font)
         # self.toggle_theme()
 
