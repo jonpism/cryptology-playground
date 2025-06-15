@@ -94,7 +94,7 @@ In Windows systems:
 ```bash
 docker run -it ^
   -e DISPLAY=host.docker.internal:0 ^
-  -v C:\x509-output:/root/Downloads ^
+  -v C:\cryptology_playground_app-output:/root/Downloads ^
   cryptology_playground_app
 ```
 
