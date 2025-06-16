@@ -40,7 +40,7 @@ class TexttoOctalWindow(QWidget):
         super().__init__()
 
         self.setWindowTitle("Text to Octal")
-        self.setFixedSize(700, 500)
+        self.setFixedSize(700, 300)
 
         # Plaintext
         plaintext_label = QLabel("Enter text:", parent=self)
@@ -83,7 +83,7 @@ class OctaltoTextWindow(QWidget):
         super().__init__()
 
         self.setWindowTitle("Octal to Text")
-        self.setFixedSize(700, 500)
+        self.setFixedSize(700, 300)
 
         # Octal input
         octal_input_label = QLabel("Give numbers (octal) separated with space:", parent=self)
@@ -139,7 +139,7 @@ class TexttoBinaryWindow(QWidget):
         super().__init__()
 
         self.setWindowTitle("Text to Binary")
-        self.setFixedSize(700, 500)
+        self.setFixedSize(700, 300)
 
         # Plaintext
         plaintext_label = QLabel("Enter text:", parent=self)
@@ -187,11 +187,11 @@ class BinarytoTextWindow(QWidget):
         super().__init__()
 
         self.setWindowTitle("Binary to Text")
-        self.setFixedSize(700, 500)
+        self.setFixedSize(700, 300)
 
         # Octal input
         bin_input_label = QLabel("Binary:", parent=self)
-        bin_input_label.setGeometry(200, 10, 300, 50)
+        bin_input_label.setGeometry(330, 10, 300, 50)
         self.bin_input = DefaultQLineEditStyle(parent=self)
         self.bin_input.setGeometry(10, 60, 680, 50)
 
@@ -235,7 +235,7 @@ class TexttoASCIIWindow(QWidget):
         super().__init__()
 
         self.setWindowTitle("Text to ASCII")
-        self.setFixedSize(700, 500)
+        self.setFixedSize(700, 300)
 
         # Plaintext
         plaintext_label = QLabel("Enter text:", parent=self)
@@ -274,7 +274,7 @@ class ASCIItoTextWindow(QWidget):
         super().__init__()
 
         self.setWindowTitle("ASCII to Text")
-        self.setFixedSize(700, 500)
+        self.setFixedSize(700, 300)
 
         # Plaintext
         ascii_input_label = QLabel("Enter ASCII:", parent=self)
@@ -324,7 +324,7 @@ class DecimaltoBinaryWindow(QWidget):
         super().__init__()
 
         self.setWindowTitle("Decimal to Binary")
-        self.setFixedSize(700, 500)
+        self.setFixedSize(700, 300)
 
         # Decimal Input
         decimal_input_label = QLabel("Enter Decimal(s) (separated with space):", parent=self)
@@ -366,7 +366,7 @@ class BinarytoDecimalWindow(QWidget):
         super().__init__()
 
         self.setWindowTitle("Binary to Decimal")
-        self.setFixedSize(700, 500)
+        self.setFixedSize(700, 300)
 
         # Binary Input
         bin_input_label = QLabel("Enter Binary (separated with space):", parent=self)

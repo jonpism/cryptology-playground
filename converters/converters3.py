@@ -29,7 +29,7 @@ class PEMtoDERWindow(QWidget):
         self.output_format_options = DefaultQComboBoxStyle(parent=self, items=output_format_items)
         self.output_format_options.setGeometry(200, 480, 120, 50)
 
-        submit_button = DefaultButtonStyle("Submit", parent=self, command=self.pem_to_hex_result)
+        submit_button = DefaultButtonStyle("Submit", parent=self, bold=True, command=self.pem_to_hex_result)
         submit_button.setGeometry(400, 480, 100, 50)
 
         self.to_der_result_label = QTextEdit(parent=self)
@@ -89,7 +89,7 @@ class DERtoPEMWindow(QWidget):
         self.hex_input.setAlignment(Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignTop)
         self.hex_input.setGeometry(10, 60, 680, 350)
 
-        submit_button = DefaultButtonStyle("Submit", parent=self, command=self.hex_to_pem)
+        submit_button = DefaultButtonStyle("Submit", parent=self, bold=True, command=self.hex_to_pem)
         submit_button.setGeometry(300, 450, 100, 50)
 
         self.to_pem_result_label = QTextEdit(parent=self)
@@ -142,7 +142,7 @@ class ToUnixTimestampWindow(QWidget):
         super().__init__()
 
         self.setWindowTitle("To UNIX Timestamp")
-        self.setFixedSize(700, 600)
+        self.setFixedSize(700, 400)
 
         # Year input
         year_label = QLabel("Enter year:", parent=self)
@@ -190,11 +190,11 @@ class ToUnixTimestampWindow(QWidget):
             max_length=2, placeholder_text="0-59")
         self.seconds_input.setGeometry(590, 120, 60, 50)
 
-        submit_button = DefaultButtonStyle("Submit", parent=self, command=self.command)
+        submit_button = DefaultButtonStyle("Submit", parent=self, bold=True, command=self.command)
         submit_button.setGeometry(300, 200, 100, 50)
 
         self.unix_time_label = QTextEdit(parent=self)
-        self.unix_time_label.setGeometry(10, 310, 380, 50)
+        self.unix_time_label.setGeometry(180, 310, 380, 50)
         self.unix_time_label.setReadOnly(True)
         self.unix_time_label.hide()
 
@@ -236,7 +236,7 @@ class FromUnixTimestampWindow(QWidget):
         super().__init__()
 
         self.setWindowTitle("From UNIX Timestamp")
-        self.setFixedSize(700, 600)
+        self.setFixedSize(500, 300)
 
         # UNIX input
         unix_label = QLabel("Enter UNIX:", parent=self)
@@ -244,11 +244,11 @@ class FromUnixTimestampWindow(QWidget):
         self.unix_input = DefaultQLineEditStyle(parent=self, int_validator=True)
         self.unix_input.setGeometry(100, 20, 150, 50)
 
-        submit_button = DefaultButtonStyle("Submit", parent=self, command=self.command)
+        submit_button = DefaultButtonStyle("Submit", parent=self, bold=True, command=self.command)
         submit_button.setGeometry(300, 20, 100, 50)
 
         self.readable_time_label = QTextEdit(parent=self)
-        self.readable_time_label.setGeometry(10, 210, 380, 50)
+        self.readable_time_label.setGeometry(80, 110, 380, 50)
         self.readable_time_label.setReadOnly(True)
         self.readable_time_label.hide()
     
@@ -315,7 +315,7 @@ class ToNatoAlphabet(QWidget):
         super().__init__()
 
         self.setWindowTitle("To NATO phonetic alphabet")
-        self.setFixedSize(700, 600)
+        self.setFixedSize(700, 400)
 
         # text input
         txt_input_label = QLabel("Give text:", parent=self)
@@ -323,8 +323,8 @@ class ToNatoAlphabet(QWidget):
         self.txt_input = DefaultQLineEditStyle(parent=self)
         self.txt_input.setGeometry(10, 60, 680, 50)
 
-        submit_button = DefaultButtonStyle("Submit", parent=self, command=self.to_nato)
-        submit_button.setGeometry(300, 160, 100, 50)
+        submit_button = DefaultButtonStyle("Submit", parent=self, bold=True, command=self.to_nato)
+        submit_button.setGeometry(300, 140, 100, 50)
 
         self.to_nato_result_label = QTextEdit(parent=self)
         self.to_nato_result_label.setGeometry(10, 230, 680, 100)
@@ -348,7 +348,7 @@ class FromNatoAlphabet(QWidget):
         super().__init__()
 
         self.setWindowTitle("From NATO phonetic alphabet")
-        self.setFixedSize(700, 600)
+        self.setFixedSize(700, 400)
 
         # nato input
         nato_input_label = QLabel("Give nato text:", parent=self)
@@ -356,8 +356,8 @@ class FromNatoAlphabet(QWidget):
         self.nato_input = DefaultQLineEditStyle(parent=self)
         self.nato_input.setGeometry(10, 60, 680, 50)
 
-        submit_button = DefaultButtonStyle("Submit", parent=self, command=self.to_txt)
-        submit_button.setGeometry(300, 160, 100, 50)
+        submit_button = DefaultButtonStyle("Submit", parent=self, bold=True, command=self.to_txt)
+        submit_button.setGeometry(300, 140, 100, 50)
 
         self.to_txt_result_label = QTextEdit(parent=self)
         self.to_txt_result_label.setGeometry(10, 230, 680, 100)

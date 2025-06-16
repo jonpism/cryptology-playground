@@ -10,7 +10,7 @@ class CodepointConverterWindow(QWidget):
         super().__init__()
 
         self.setWindowTitle("Char to Codepoint and Codepoint to char converter")
-        self.setFixedSize(700, 700)
+        self.setFixedSize(650, 300)
 
         # Char input
         char_input_label = QLabel("Give a char:", parent=self)
@@ -25,12 +25,12 @@ class CodepointConverterWindow(QWidget):
         self.cp_input.setGeometry(350, 60, 100, 50)
 
         self.result1_label = QTextEdit(parent=self)
-        self.result1_label.setGeometry(50, 230, 100, 100)
+        self.result1_label.setGeometry(50, 170, 100, 100)
         self.result1_label.setReadOnly(True)
         self.result1_label.hide()
 
         self.result2_label = QTextEdit(parent=self)
-        self.result2_label.setGeometry(350, 230, 100, 100)
+        self.result2_label.setGeometry(350, 170, 100, 100)
         self.result2_label.setReadOnly(True)
         self.result2_label.hide()
 
@@ -89,7 +89,7 @@ class TexttoHexWindow(QWidget):
         super().__init__()
 
         self.setWindowTitle("Text to Hex Converter")
-        self.setFixedSize(700, 700)
+        self.setFixedSize(700, 300)
 
         # Plaintext
         plaintext_label = QLabel("Enter text:", parent=self)
@@ -98,7 +98,7 @@ class TexttoHexWindow(QWidget):
         self.plaintext_input.setGeometry(10, 60, 680, 50)
 
         self.to_hex_result_label = QTextEdit(parent=self)
-        self.to_hex_result_label.setGeometry(10, 230, 680, 100)
+        self.to_hex_result_label.setGeometry(10, 130, 680, 100)
         self.to_hex_result_label.setReadOnly(True)
         self.to_hex_result_label.hide()
 
@@ -125,7 +125,7 @@ class HextoTextWindow(QWidget):
         super().__init__()
 
         self.setWindowTitle("Hex to Text Converter")
-        self.setFixedSize(700, 700)
+        self.setFixedSize(700, 300)
 
         # Hex input
         hex_input_label = QLabel("Enter hex values (separated with space):", parent=self)
@@ -134,7 +134,7 @@ class HextoTextWindow(QWidget):
         self.hex_input.setGeometry(10, 60, 680, 50)
 
         self.to_text_result_label = QTextEdit(parent=self)
-        self.to_text_result_label.setGeometry(10, 230, 680, 100)
+        self.to_text_result_label.setGeometry(10, 130, 680, 100)
         self.to_text_result_label.setReadOnly(True)
         self.to_text_result_label.hide()
 
@@ -174,7 +174,7 @@ class DecimalToRadixWindow(QWidget):
         super().__init__()
 
         self.setWindowTitle("Decimal to Radix (Base) Converter")
-        self.setFixedSize(700, 700)
+        self.setFixedSize(700, 350)
 
         # Decimal input
         decimal_input_label = QLabel("Give Decimal:", parent=self)
@@ -188,7 +188,7 @@ class DecimalToRadixWindow(QWidget):
         self.base_input = DefaultQLineEditStyle(parent=self, int_validator=True, max_length=2)
         self.base_input.setGeometry(180, 120, 50, 50)
 
-        submit_button = DefaultButtonStyle("Submit", parent=self, command=self.to_radix_result)
+        submit_button = DefaultButtonStyle("Submit", parent=self, bold=True, command=self.to_radix_result)
         submit_button.setGeometry(300, 160, 100, 50)
 
         self.to_radix_result_label = QTextEdit(parent=self)
@@ -232,7 +232,7 @@ class RadixToDecimalWindow(QWidget):
         super().__init__()
 
         self.setWindowTitle("Radix (Base) to Decimal Converter")
-        self.setFixedSize(700, 700)
+        self.setFixedSize(700, 400)
 
         # Radix input
         radix_input_label = QLabel("Give Radix Number:", parent=self)
@@ -246,7 +246,7 @@ class RadixToDecimalWindow(QWidget):
         self.base_input = DefaultQLineEditStyle(parent=self, int_validator=True, max_length=2)
         self.base_input.setGeometry(180, 120, 50, 50)
 
-        submit_button = DefaultButtonStyle("Submit", parent=self, command=self.to_decimal_result)
+        submit_button = DefaultButtonStyle("Submit", parent=self, bold=True, command=self.to_decimal_result)
         submit_button.setGeometry(300, 160, 100, 50)
 
         self.to_decimal_result_label = QTextEdit(parent=self)
@@ -284,7 +284,7 @@ class DecimalToBCDWindow(QWidget):
         super().__init__()
 
         self.setWindowTitle("Decimal to BCD (Binary-coded decimal) Converter")
-        self.setFixedSize(700, 700)
+        self.setFixedSize(700, 350)
 
         # Decimal input
         decimal_input_label = QLabel("Enter Decimal:", parent=self)
@@ -292,8 +292,8 @@ class DecimalToBCDWindow(QWidget):
         self.decimal_input = DefaultQLineEditStyle(parent=self)
         self.decimal_input.setGeometry(10, 60, 680, 50)
 
-        submit_button = DefaultButtonStyle("Submit", parent=self, command=self.to_bcd)
-        submit_button.setGeometry(300, 160, 100, 50)
+        submit_button = DefaultButtonStyle("Submit", parent=self, bold=True, command=self.to_bcd)
+        submit_button.setGeometry(300, 140, 100, 50)
 
         self.to_bcd_result_label = QTextEdit(parent=self)
         self.to_bcd_result_label.setGeometry(10, 230, 680, 100)
@@ -317,7 +317,7 @@ class BCDToDecimalWindow(QWidget):
         super().__init__()
 
         self.setWindowTitle("BCD (Binary-coded decimal) to Decimal Converter")
-        self.setFixedSize(700, 700)
+        self.setFixedSize(700, 350)
 
         # BCD input
         bcd_input_label = QLabel("Give BCD:", parent=self)
@@ -325,8 +325,8 @@ class BCDToDecimalWindow(QWidget):
         self.bcd_input = DefaultQLineEditStyle(parent=self)
         self.bcd_input.setGeometry(10, 60, 680, 50)
 
-        submit_button = DefaultButtonStyle("Submit", parent=self, command=self.to_decimal)
-        submit_button.setGeometry(300, 160, 100, 50)
+        submit_button = DefaultButtonStyle("Submit", parent=self, bold=True, command=self.to_decimal)
+        submit_button.setGeometry(300, 140, 100, 50)
 
         self.to_decimal_result_label = QTextEdit(parent=self)
         self.to_decimal_result_label.setGeometry(10, 230, 680, 100)
@@ -356,7 +356,7 @@ class CharToHTMLEntityWindow(QWidget):
         super().__init__()
 
         self.setWindowTitle("Character(s) to HTML Entities Converter")
-        self.setFixedSize(700, 700)
+        self.setFixedSize(700, 350)
 
         # Char input
         chr_input_label = QLabel("Give Character(s) (separated with space):", parent=self)
@@ -364,8 +364,8 @@ class CharToHTMLEntityWindow(QWidget):
         self.chr_input = DefaultQLineEditStyle(parent=self)
         self.chr_input.setGeometry(10, 60, 680, 50)
 
-        submit_button = DefaultButtonStyle("Submit", parent=self, command=self.to_htmlentity)
-        submit_button.setGeometry(300, 160, 100, 50)
+        submit_button = DefaultButtonStyle("Submit", parent=self, bold=True, command=self.to_htmlentity)
+        submit_button.setGeometry(300, 140, 100, 50)
 
         self.to_htmlentity_result_label = QTextEdit(parent=self)
         self.to_htmlentity_result_label.setGeometry(10, 230, 680, 100)
@@ -390,7 +390,7 @@ class HTMLEntityToCharWindow(QWidget):
         super().__init__()
 
         self.setWindowTitle("HTML Entities to Character(s) Converter")
-        self.setFixedSize(700, 700)
+        self.setFixedSize(700, 350)
 
         # Char input
         entity_input_label = QLabel("Give HTML Entities (separated with space):", parent=self)
@@ -398,8 +398,8 @@ class HTMLEntityToCharWindow(QWidget):
         self.entity_input = DefaultQLineEditStyle(parent=self)
         self.entity_input.setGeometry(10, 60, 680, 50)
 
-        submit_button = DefaultButtonStyle("Submit", parent=self, command=self.to_chars)
-        submit_button.setGeometry(300, 160, 100, 50)
+        submit_button = DefaultButtonStyle("Submit", parent=self, bold=True, command=self.to_chars)
+        submit_button.setGeometry(300, 140, 100, 50)
 
         self.to_chr_result_label = QTextEdit(parent=self)
         self.to_chr_result_label.setGeometry(10, 230, 680, 100)
