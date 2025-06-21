@@ -48,17 +48,17 @@ class GOST34112012Window(QWidget):
         submit_button.setGeometry(300, 180, 100, 50)
 
         self.bytes_result_label = QTextEdit(parent=self)
-        self.bytes_result_label.setGeometry(10, 350, 680, 100)
+        self.bytes_result_label.setGeometry(10, 270, 680, 100)
         self.bytes_result_label.setReadOnly(True)
         self.bytes_result_label.hide()
 
         self.hex_result_label = QTextEdit(parent=self)
-        self.hex_result_label.setGeometry(10, 450, 680, 100)
+        self.hex_result_label.setGeometry(10, 390, 680, 100)
         self.hex_result_label.setReadOnly(True)
         self.hex_result_label.hide()
 
         self.b64_result_label = QTextEdit(parent=self)
-        self.b64_result_label.setGeometry(10, 550, 680, 100)
+        self.b64_result_label.setGeometry(10, 510, 680, 100)
         self.b64_result_label.setReadOnly(True)
         self.b64_result_label.hide()
 

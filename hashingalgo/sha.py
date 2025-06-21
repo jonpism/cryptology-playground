@@ -99,7 +99,7 @@ class SHA1Window(AboutSHA):
         self.message_input = DefaultQLineEditStyle(parent=self)
         self.message_input.setGeometry(10, 60, 680, 50)
 
-        submit_button = DefaultButtonStyle("Submit", parent=self, command=self.call_sha1)
+        submit_button = DefaultButtonStyle("Submit", parent=self, bold=True, command=self.call_sha1)
         submit_button.setGeometry(300, 160, 100, 50)
 
         self.b64_result_label = QTextEdit(parent=self)
@@ -228,7 +228,7 @@ class SHA256Window(AboutSHA):
         self.message_input = DefaultQLineEditStyle(parent=self)
         self.message_input.setGeometry(10, 60, 680, 50)
 
-        submit_button = DefaultButtonStyle("Submit", parent=self, command=self.call_sha256)
+        submit_button = DefaultButtonStyle("Submit", parent=self, bold=True, command=self.call_sha256)
         submit_button.setGeometry(300, 160, 100, 50)
 
         self.b64_result_label = QTextEdit(parent=self)
@@ -351,7 +351,7 @@ class SHA384Window(AboutSHA):
         self.message_input = DefaultQLineEditStyle(parent=self)
         self.message_input.setGeometry(10, 60, 680, 50)
 
-        submit_button = DefaultButtonStyle("Submit", parent=self, command=self.call_sha384)
+        submit_button = DefaultButtonStyle("Submit", parent=self, bold=True, command=self.call_sha384)
         submit_button.setGeometry(300, 160, 100, 50)
 
         self.b64_result_label = QTextEdit(parent=self)
@@ -474,7 +474,7 @@ class SHA512Window(AboutSHA):
         self.message_input = DefaultQLineEditStyle(parent=self)
         self.message_input.setGeometry(10, 60, 680, 50)
 
-        submit_button = DefaultButtonStyle("Submit", parent=self, command=self.call_sha512)
+        submit_button = DefaultButtonStyle("Submit", parent=self, bold=True, command=self.call_sha512)
         submit_button.setGeometry(300, 160, 100, 50)
 
         self.b64_result_label = QTextEdit(parent=self)

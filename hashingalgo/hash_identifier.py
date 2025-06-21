@@ -69,7 +69,7 @@ class HashIdentifierWindow(QWidget):
         self.hash_input = DefaultQLineEditStyle(parent=self)
         self.hash_input.setGeometry(10, 60, 680, 50)
 
-        submit_button = DefaultButtonStyle("Submit", parent=self, command=self.hash_identifier_command)
+        submit_button = DefaultButtonStyle("Submit", parent=self, bold=True, command=self.hash_identifier_command)
         submit_button.setGeometry(300, 160, 100, 50)
 
         self.result_label = QTextEdit(parent=self)

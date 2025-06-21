@@ -163,7 +163,7 @@ class MD4Window(QWidget):
         self.message_input = DefaultQLineEditStyle(parent=self)
         self.message_input.setGeometry(10, 60, 680, 50)
 
-        submit_button = DefaultButtonStyle("Submit", parent=self, command=self.call_md4)
+        submit_button = DefaultButtonStyle("Submit", parent=self, bold=True, command=self.call_md4)
         submit_button.setGeometry(300, 160, 100, 50)
 
         self.result_label = QTextEdit(parent=self)

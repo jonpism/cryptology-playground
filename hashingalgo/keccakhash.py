@@ -40,7 +40,7 @@ class KeccakHash(QWidget):
         self.bits_options = DefaultQComboBoxStyle(parent=self, items=bits_items)
         self.bits_options.setGeometry(150, 160, 120, 50)
 
-        submit_button = DefaultButtonStyle("Submit", parent=self, command=self.call_keccak)
+        submit_button = DefaultButtonStyle("Submit", parent=self, bold=True, command=self.call_keccak)
         submit_button.setGeometry(350, 160, 100, 50)
 
         self.base64_label = QTextEdit(parent=self)

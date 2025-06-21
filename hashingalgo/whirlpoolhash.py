@@ -12,7 +12,6 @@ class WhirlpoolWindow(QWidget):
         
         msgbox_title = "About Whirlpool Hash Function"
         msgbox_txt = (
-            "<h2>About Whirlpool Hash Function</h2>"
             "<p>Whirlpool is a cryptographic hash function designed by Vincent Rijmen and Paulo S. L. M. Barreto, which is based on the "
             "wide-pipe construction. It produces a 512-bit (64-byte) hash value, making it a member of the larger family of cryptographic hash functions. "
             "Whirlpool was designed to provide a high level of security and is often used in applications that require robust data integrity and verification.</p>"
@@ -43,7 +42,7 @@ class WhirlpoolWindow(QWidget):
         self.message_input = DefaultQLineEditStyle(parent=self)
         self.message_input.setGeometry(10, 60, 680, 50)
 
-        submit_button = DefaultButtonStyle("Submit", parent=self, command=self.call_whirlpool)
+        submit_button = DefaultButtonStyle("Submit", parent=self, bold=True, command=self.call_whirlpool)
         submit_button.setGeometry(300, 160, 100, 50)
 
         self.b64_result_label = QTextEdit(parent=self)
@@ -57,7 +56,7 @@ class WhirlpoolWindow(QWidget):
         self.hexdigest_label.hide()
 
         self.rawdigest_label = QTextEdit(parent=self)
-        self.rawdigest_label.setGeometry(10, 480, 680, 100)
+        self.rawdigest_label.setGeometry(10, 510, 680, 100)
         self.rawdigest_label.setReadOnly(True)
         self.rawdigest_label.hide()
 

@@ -36,7 +36,7 @@ class BLAKE3Window(QWidget):
         "<a href=https://www.infoq.com/news/2020/01/blake3-fast-crypto-hash>infoq</a>")
 
         self.setWindowTitle("BLAKE3")
-        self.setFixedSize(700, 500)
+        self.setFixedSize(700, 450)
 
         # Text
         text_label = QLabel("Give plaintext:", parent=self)
@@ -50,7 +50,7 @@ class BLAKE3Window(QWidget):
         self.output_format_options = DefaultQComboBoxStyle(parent=self, items=output_format_items)
         self.output_format_options.setGeometry(100, 160, 120, 50)
 
-        submit_button = DefaultButtonStyle("Submit", parent=self, command=self.call_blake3)
+        submit_button = DefaultButtonStyle("Submit", parent=self, bold=True, command=self.call_blake3)
         submit_button.setGeometry(300, 160, 100, 50)
 
         self.result_label = QTextEdit(parent=self)
@@ -59,7 +59,7 @@ class BLAKE3Window(QWidget):
         self.result_label.hide()
 
         # About button setup
-        self.aboutButton = DefaultAboutButtonStyle("", parent=self, txt=msgbox_txt, title=msgbox_title, geometry=(650, 450, 50, 50))
+        self.aboutButton = DefaultAboutButtonStyle("", parent=self, txt=msgbox_txt, title=msgbox_title, geometry=(650, 400, 50, 50))
         self.aboutButton.update_theme(self.theme_mode)
 
     def call_blake3(self):

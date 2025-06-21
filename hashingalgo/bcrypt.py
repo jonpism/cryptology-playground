@@ -35,7 +35,7 @@ class BcryptWindow(QWidget):
         self.output_format_options = DefaultQComboBoxStyle(parent=self, items=output_format_items)
         self.output_format_options.setGeometry(150, 160, 120, 50)
 
-        submit_button = DefaultButtonStyle("Submit", parent=self, command=self.call_bcrypt)
+        submit_button = DefaultButtonStyle("Submit", parent=self, bold=True, command=self.call_bcrypt)
         submit_button.setGeometry(330, 160, 100, 50)
 
         self.result_label = QTextEdit(parent=self)

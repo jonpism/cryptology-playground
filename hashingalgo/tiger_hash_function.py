@@ -453,17 +453,17 @@ class TigerHashFunctionWindow(QWidget):
             "</ul>")
 
         self.setWindowTitle("Tiger Hash function")
-        self.setFixedSize(700, 600)
+        self.setFixedSize(700, 530)
 
         # Text input
         text_input_label = QLabel("Give text:", parent=self)
-        text_input_label.setGeometry(300, 10, 100, 50)
+        text_input_label.setGeometry(320, 10, 100, 50)
         self.text_input = DefaultQLineEditStyle(
             parent=self)
         self.text_input.setGeometry(10, 60, 680, 50)
 
-        submit_button = DefaultButtonStyle("Submit", parent=self, command=self.call_tiger)
-        submit_button.setGeometry(280, 120, 100, 50)
+        submit_button = DefaultButtonStyle("Submit", parent=self, bold=True, command=self.call_tiger)
+        submit_button.setGeometry(300, 140, 100, 50)
 
         self.raw_result_label = QTextEdit(parent=self)
         self.raw_result_label.setGeometry(10, 230, 680, 100)
@@ -476,12 +476,12 @@ class TigerHashFunctionWindow(QWidget):
         self.hex_result_label.hide()
 
         self.b64_result_label = QTextEdit(parent=self)
-        self.b64_result_label.setGeometry(10, 450, 680, 50)
+        self.b64_result_label.setGeometry(10, 430, 680, 50)
         self.b64_result_label.setReadOnly(True)
         self.b64_result_label.hide()
 
         # About button setup
-        self.aboutButton = DefaultAboutButtonStyle("", parent=self, txt=msgbox_txt, title=msgbox_title, geometry=(650, 550, 50, 50))
+        self.aboutButton = DefaultAboutButtonStyle("", parent=self, txt=msgbox_txt, title=msgbox_title, geometry=(650, 480, 50, 50))
         self.aboutButton.update_theme(self.theme_mode)
 
     def call_tiger(self):
