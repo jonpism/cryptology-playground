@@ -13,10 +13,12 @@ from .python_code_disassembler  import PyCodeDisassemblerWindow
 from .detect_file_type          import FileTypeDetectorWindow
 from .pgpencryptor              import PGPEncryptWindow
 from .pgpdecryptor              import PGPDecryptWindow
+from .decode_txt_files          import DecodeTXTFilesWindow
+from .xxd_tool                  import xxdHexDumpWindow
 
 __all__ = ["FernetFileEncWindow", "FernetFileDecWindow", "CSVtoJSONWindow", "JSONtoCSVWindow",
            "Img2PDFWindow", "PDF2ImgWindow", "ExifImageWindow", "ZipFileWithPwdWindow",
            "ZipFolderWithPwdWindow", "BfPwdProtectedFilesWindow", "DisassembleExeFilesWindow",
            "DecompilePycFilesWindow", "JSONtoMsgPackWindow", "MsgPacktoJSONWindow",
            "JSONtoXMLWindow", "XMLtoJSONWindow", "PyCodeDisassemblerWindow", "PGPEncryptWindow",
-           "FileTypeDetectorWindow", "PGPDecryptWindow"]
+           "FileTypeDetectorWindow", "PGPDecryptWindow", "DecodeTXTFilesWindow", "xxdHexDumpWindow"]

@@ -45,7 +45,10 @@ class FileHandlingPageUI:
             "Python Code Disassembler",
             "File Type Detector",
             "PGP Encryptor",
-            "PGP Decryptor"]
+            "PGP Decryptor",
+            "Decode .txt files",
+            "xxd Hex Dump Tool"
+            ]
 
         object_names = [
             "FernetFileEncButton",
@@ -67,7 +70,10 @@ class FileHandlingPageUI:
             "PyCodeDisassemblerButton",
             "FileTypeDetectorButton",
             "PGPEncryptorButton",
-            "PGPDecryptorButton"]
+            "PGPDecryptorButton",
+            "DecodeTxtFilesButton",
+            "xxdHexDumpButton"
+            ]
 
         self.filehandling_buttons = {}
         start_x = 20
