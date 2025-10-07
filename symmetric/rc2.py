@@ -35,7 +35,7 @@ class RC2EncryptionWindow(QWidget):
         super().__init__()
         self.theme_mode = theme_mode
 
-        msgbox_title = "About RC2 Enrcyption"
+        msgbox_title = "About RC2 Encryption"
         msgbox_txt = """<p><b>RC2</b> (Rivest Cipher 2) is a symmetric block cipher developed by Ron Rivest in 1987. It operates on 64-bit blocks using variable-length keys (up to 128 bits).</p>
         <p>This tool encrypts data using the <b>RC2 algorithm in ECB (Electronic Codebook) mode</b>. In this mode:</p>
         <ul>

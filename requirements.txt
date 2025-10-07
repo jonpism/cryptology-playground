@@ -35,3 +35,4 @@ cffi
 des
 androguard
 pyexiftool
+arc4

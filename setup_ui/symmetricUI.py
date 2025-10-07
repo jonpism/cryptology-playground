@@ -34,6 +34,8 @@ class SymmetricPageUI:
             ("Camellia", "CamelliaButton"),
             ("RC2 Encryption", "RC2EncButton"),
             ("RC2 Decryption", "RC2DecButton"),
+            ("RC4 Encryption", "RC4EncButton"),
+            ("RC4 Decryption", "RC4DecButton"),
             ("RC5 Encryption", "RC5EncButton"),
             ("RC5 Decryption", "RC5DecButton"),
             ("Serpent", "SerpentButton"),

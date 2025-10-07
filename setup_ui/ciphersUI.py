@@ -33,8 +33,6 @@ class CiphersPageUI:
             ("Enigma Machine", "EnigmaButton"),
             ("GOST (magma)", "GOSTButton"),
             ("Rabbit stream cipher", "RabbitButton"),
-            ("RC4 Encryption", "RC4EncButton"),
-            ("RC4 Decryption", "RC4DecButton"),
             ("ROT13", "ROT13Button"),
             ("ROT47", "ROT47Button"),
             ("ROT13 Bruteforce", "ROT13BFButton"),

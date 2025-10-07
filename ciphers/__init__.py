@@ -1,5 +1,4 @@
 from .caesar_cipher         import CaesarCipherWindow
-from .rc4                   import RC4DecryptionWindow, RC4EncryptionWindow
 from .rot13                 import ROT13Window
 from .rot13_bruteforce      import ROT13BFWindow
 from .rot47                 import ROT47Window
@@ -19,7 +18,7 @@ from .sm4_block_cipher      import SM4BlockCipherDecryptWindow, SM4BlockCipherEn
 from .bifid_cipher          import BifidCipherWindow
 from .affine_cipher         import AffineCipherEncWindow, AffineCipherDecWindow
 
-__all__ = ["CaesarCipherWindow", "RC4DecryptionWindow", "RC4EncryptionWindow", "ROT13Window", 
+__all__ = ["CaesarCipherWindow", "ROT13Window", 
            "ROT13BFWindow", "ROT47Window", "ROT47BFWindow", "EnigmaMachineWindow",
            "VigenereDecryptionWindow", "VigenereEncryptionWindow", "SimpleSubWindow",
            "BaconCipherWindow", "GOSTMagmaWindow", "RabbitStreamCipherWindow", "TEAWindow", "XTEAWindow",
