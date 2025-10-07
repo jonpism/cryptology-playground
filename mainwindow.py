@@ -287,6 +287,8 @@ class MainWindow(QMainWindow):
         self.ui.filehandling_ui.filehandling_buttons["DecodeTxtFilesButton"].clicked.connect(self.OpenDecodeTxtFilesWindow)
         self.ui.filehandling_ui.filehandling_buttons["xxdHexDumpButton"].clicked.connect(self.OpenxxdFileWindow)
         self.ui.filehandling_ui.filehandling_buttons["FileMetadataExtractorButton"].clicked.connect(self.OpenFileMetadataExtractorWindow)
+        self.ui.filehandling_ui.filehandling_buttons["HashFilesButton"].clicked.connect(self.OpenHashFilesWindow)
+        self.ui.filehandling_ui.filehandling_buttons["CompareFileHashesButton"].clicked.connect(self.OpenCompareFileHashesWindow)
 
         # OTHER TOOLS SECTION AND BUTTONS TO OPEN METHODS/ALGORITHMS:
         self.ui.OtherToolsButton.clicked.connect            (self.OpenOtherToolsSection)
@@ -560,6 +562,8 @@ class MainWindow(QMainWindow):
     def OpenDecodeTxtFilesWindow(self):     self.dtxtfiles =    DecodeTXTFilesWindow(self.theme_mode);         self.dtxtfiles.show()
     def OpenxxdFileWindow(self):            self.xxdfiles =     xxdHexDumpWindow(self.theme_mode);             self.xxdfiles.show()
     def OpenFileMetadataExtractorWindow(self): self.filemetadata = FileMetadataExtractorWindow(self.theme_mode); self.filemetadata.show()
+    def OpenHashFilesWindow(self):          self.hashfiles =    HashFilesWindow(self.theme_mode);              self.hashfiles.show()
+    def OpenCompareFileHashesWindow(self):  self.comparehashes = CompareFileHashesWindow(self.theme_mode);     self.comparehashes.show()
 
     """OTHER TOOLS SECTION"""
     def OpenOtherToolsSection(self):        self.ui.stackedWidget.setCurrentWidget(self.ui.othertools_ui.OtherToolsPage)        

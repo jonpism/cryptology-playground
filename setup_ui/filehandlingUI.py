@@ -48,8 +48,9 @@ class FileHandlingPageUI:
             "PGP Decryptor",
             "Decode .txt files",
             "xxd Hex Dump Tool",
-            "File Metadata Extractor"
-            ]
+            "File Metadata Extractor",
+            "File Hash Generator",
+            "Compare File Hashes"]
 
         object_names = [
             "FernetFileEncButton",
@@ -74,7 +75,9 @@ class FileHandlingPageUI:
             "PGPDecryptorButton",
             "DecodeTxtFilesButton",
             "xxdHexDumpButton",
-            "FileMetadataExtractorButton"
+            "FileMetadataExtractorButton",
+            "HashFilesButton",
+            "CompareFileHashesButton"
             ]
 
         self.filehandling_buttons = {}
