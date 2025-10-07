@@ -15,10 +15,13 @@ from .pgpencryptor              import PGPEncryptWindow
 from .pgpdecryptor              import PGPDecryptWindow
 from .decode_txt_files          import DecodeTXTFilesWindow
 from .xxd_tool                  import xxdHexDumpWindow
+from .file_metadata_extractor   import FileMetadataExtractorWindow
 
 __all__ = ["FernetFileEncWindow", "FernetFileDecWindow", "CSVtoJSONWindow", "JSONtoCSVWindow",
            "Img2PDFWindow", "PDF2ImgWindow", "ExifImageWindow", "ZipFileWithPwdWindow",
            "ZipFolderWithPwdWindow", "BfPwdProtectedFilesWindow", "DisassembleExeFilesWindow",
            "DecompilePycFilesWindow", "JSONtoMsgPackWindow", "MsgPacktoJSONWindow",
            "JSONtoXMLWindow", "XMLtoJSONWindow", "PyCodeDisassemblerWindow", "PGPEncryptWindow",
-           "FileTypeDetectorWindow", "PGPDecryptWindow", "DecodeTXTFilesWindow", "xxdHexDumpWindow"]
+           "FileTypeDetectorWindow", "PGPDecryptWindow", "DecodeTXTFilesWindow", "xxdHexDumpWindow",
+           "FileMetadataExtractorWindow"
+           ]

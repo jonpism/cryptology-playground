@@ -286,6 +286,7 @@ class MainWindow(QMainWindow):
         self.ui.filehandling_ui.filehandling_buttons["PGPDecryptorButton"].clicked.connect(self.OpenPGPDecryptorWindow)
         self.ui.filehandling_ui.filehandling_buttons["DecodeTxtFilesButton"].clicked.connect(self.OpenDecodeTxtFilesWindow)
         self.ui.filehandling_ui.filehandling_buttons["xxdHexDumpButton"].clicked.connect(self.OpenxxdFileWindow)
+        self.ui.filehandling_ui.filehandling_buttons["FileMetadataExtractorButton"].clicked.connect(self.OpenFileMetadataExtractorWindow)
 
         # OTHER TOOLS SECTION AND BUTTONS TO OPEN METHODS/ALGORITHMS:
         self.ui.OtherToolsButton.clicked.connect            (self.OpenOtherToolsSection)
@@ -558,6 +559,7 @@ class MainWindow(QMainWindow):
     def OpenPGPDecryptorWindow(self):       self.pgpdec =       PGPDecryptWindow(self.theme_mode);             self.pgpdec.show()
     def OpenDecodeTxtFilesWindow(self):     self.dtxtfiles =    DecodeTXTFilesWindow(self.theme_mode);         self.dtxtfiles.show()
     def OpenxxdFileWindow(self):            self.xxdfiles =     xxdHexDumpWindow(self.theme_mode);             self.xxdfiles.show()
+    def OpenFileMetadataExtractorWindow(self): self.filemetadata = FileMetadataExtractorWindow(self.theme_mode); self.filemetadata.show()
 
     """OTHER TOOLS SECTION"""
     def OpenOtherToolsSection(self):        self.ui.stackedWidget.setCurrentWidget(self.ui.othertools_ui.OtherToolsPage)        

@@ -47,7 +47,8 @@ class FileHandlingPageUI:
             "PGP Encryptor",
             "PGP Decryptor",
             "Decode .txt files",
-            "xxd Hex Dump Tool"
+            "xxd Hex Dump Tool",
+            "File Metadata Extractor"
             ]
 
         object_names = [
@@ -72,7 +73,8 @@ class FileHandlingPageUI:
             "PGPEncryptorButton",
             "PGPDecryptorButton",
             "DecodeTxtFilesButton",
-            "xxdHexDumpButton"
+            "xxdHexDumpButton",
+            "FileMetadataExtractorButton"
             ]
 
         self.filehandling_buttons = {}
