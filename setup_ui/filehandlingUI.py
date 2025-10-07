@@ -50,7 +50,8 @@ class FileHandlingPageUI:
             "xxd Hex Dump Tool",
             "File Metadata Extractor",
             "File Hash Generator",
-            "Compare File Hashes"]
+            "Compare File Hashes",
+            "File Steganography Tool"]
 
         object_names = [
             "FernetFileEncButton",
@@ -77,7 +78,8 @@ class FileHandlingPageUI:
             "xxdHexDumpButton",
             "FileMetadataExtractorButton",
             "HashFilesButton",
-            "CompareFileHashesButton"
+            "CompareFileHashesButton",
+            "FileStegToolButton"
             ]
 
         self.filehandling_buttons = {}

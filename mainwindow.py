@@ -289,6 +289,7 @@ class MainWindow(QMainWindow):
         self.ui.filehandling_ui.filehandling_buttons["FileMetadataExtractorButton"].clicked.connect(self.OpenFileMetadataExtractorWindow)
         self.ui.filehandling_ui.filehandling_buttons["HashFilesButton"].clicked.connect(self.OpenHashFilesWindow)
         self.ui.filehandling_ui.filehandling_buttons["CompareFileHashesButton"].clicked.connect(self.OpenCompareFileHashesWindow)
+        self.ui.filehandling_ui.filehandling_buttons["FileStegToolButton"].clicked.connect(self.OpenFileStegToolWindow)
 
         # OTHER TOOLS SECTION AND BUTTONS TO OPEN METHODS/ALGORITHMS:
         self.ui.OtherToolsButton.clicked.connect            (self.OpenOtherToolsSection)
@@ -564,6 +565,7 @@ class MainWindow(QMainWindow):
     def OpenFileMetadataExtractorWindow(self): self.filemetadata = FileMetadataExtractorWindow(self.theme_mode); self.filemetadata.show()
     def OpenHashFilesWindow(self):          self.hashfiles =    HashFilesWindow(self.theme_mode);              self.hashfiles.show()
     def OpenCompareFileHashesWindow(self):  self.comparehashes = CompareFileHashesWindow(self.theme_mode);     self.comparehashes.show()
+    def OpenFileStegToolWindow(self):       self.filesteg =     FileStegToolWindow(self.theme_mode);           self.filesteg.show()
 
     """OTHER TOOLS SECTION"""
     def OpenOtherToolsSection(self):        self.ui.stackedWidget.setCurrentWidget(self.ui.othertools_ui.OtherToolsPage)        

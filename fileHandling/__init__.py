@@ -18,6 +18,7 @@ from .xxd_tool                  import xxdHexDumpWindow
 from .file_metadata_extractor   import FileMetadataExtractorWindow
 from .file_hash_generator       import HashFilesWindow
 from .compare_hashes            import CompareFileHashesWindow
+from .file_steganography        import FileStegToolWindow
 
 __all__ = ["FernetFileEncWindow", "FernetFileDecWindow", "CSVtoJSONWindow", "JSONtoCSVWindow",
            "Img2PDFWindow", "PDF2ImgWindow", "ExifImageWindow", "ZipFileWithPwdWindow",
@@ -25,5 +26,5 @@ __all__ = ["FernetFileEncWindow", "FernetFileDecWindow", "CSVtoJSONWindow", "JSO
            "DecompilePycFilesWindow", "JSONtoMsgPackWindow", "MsgPacktoJSONWindow",
            "JSONtoXMLWindow", "XMLtoJSONWindow", "PyCodeDisassemblerWindow", "PGPEncryptWindow",
            "FileTypeDetectorWindow", "PGPDecryptWindow", "DecodeTXTFilesWindow", "xxdHexDumpWindow",
-           "FileMetadataExtractorWindow", "HashFilesWindow", "CompareFileHashesWindow"
+           "FileMetadataExtractorWindow", "HashFilesWindow", "CompareFileHashesWindow", "FileStegToolWindow"
            ]
