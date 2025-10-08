@@ -10,9 +10,10 @@ from .bcrypt                import BcryptWindow
 from .gost_hash_function    import GOST34112012Window
 from .tiger_hash_function   import TigerHashFunctionWindow
 from .keccakhash            import KeccakHash
+from .shake                 import SHAKEWindow
 
 __all__ = [
     "SHA1Window", "SHA256Window", "SHA512Window", "MD4Window", "MD5Window", 
     "HashIdentifierWindow", "BLAKE2Window", "BLAKE3Window", "RIPEMD160Window",
     "SHA384Window", "WhirlpoolWindow", "BcryptWindow", "GOST34112012Window",
-    "TigerHashFunctionWindow", "KeccakHash"]
+    "TigerHashFunctionWindow", "KeccakHash", "SHAKEWindow"]

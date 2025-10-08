@@ -40,8 +40,8 @@ class HashAlgoPageUI:
             ("GOST hash function", "GostHfButton"),
             ("Hash Identifier", "HashIdentifier"),
             ("Tiger", "TigerHashFunctionButton"),
-            ("Keccak", "KeccakButton")
-        ]
+            ("Keccak", "KeccakButton"),
+            ("SHAKE", "SHAKEButton")]
 
         self.hash_algo_buttons = {}
         start_x = 70

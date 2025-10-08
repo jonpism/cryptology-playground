@@ -164,6 +164,7 @@ class MainWindow(QMainWindow):
         self.ui.hashalgo_ui.hash_algo_buttons["GostHfButton"].clicked.connect(self.OpenGOSTHashFunctionWindow)
         self.ui.hashalgo_ui.hash_algo_buttons["TigerHashFunctionButton"].clicked.connect(self.OpenTigerHasFunctionWindow)
         self.ui.hashalgo_ui.hash_algo_buttons["KeccakButton"].clicked.connect(self.OpenKeccakWindow)
+        self.ui.hashalgo_ui.hash_algo_buttons["SHAKEButton"].clicked.connect(self.OpenSHAKEWindow)
         
         # ENCODERS/DECODERS SECTION AND BUTTONS TO OPEN METHODS/ALGORITHMS:
         self.ui.EncodersButton.clicked.connect              (self.OpenEncodersSection)
@@ -464,6 +465,7 @@ class MainWindow(QMainWindow):
     def OpenGOSTHashFunctionWindow(self):   self.gosthf =       GOST34112012Window(self.theme_mode);        self.gosthf.show()
     def OpenTigerHasFunctionWindow(self):   self.tiger =        TigerHashFunctionWindow(self.theme_mode);   self.tiger.show()
     def OpenKeccakWindow(self):             self.kecc =         KeccakHash(self.theme_mode);                self.kecc.show()
+    def OpenSHAKEWindow(self):              self.shake =        SHAKEWindow(self.theme_mode);               self.shake.show()
 
     """ENCODERS SECTION"""
     def OpenEncodersSection(self):          self.ui.stackedWidget.setCurrentWidget(self.ui.encoders_ui.EncodersPage)
