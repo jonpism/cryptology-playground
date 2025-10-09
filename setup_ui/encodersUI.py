@@ -44,7 +44,9 @@ class EncodersPageUI:
             ("To Quoted Printable", "ToQPButton"),
             ("From Quoted Printable", "FromQPButton"),
             ("To BCD", "ToBCDButton"),
-            ("From BCD", "FromBCDButton")
+            ("From BCD", "FromBCDButton"),
+            ("Punycode Encode", "PunycodeEncButton"),
+            ("Punycode Decode", "PunycodeDecButton"),
         ]
 
         self.encoders_buttons = {}

@@ -191,6 +191,8 @@ class MainWindow(QMainWindow):
         self.ui.encoders_ui.encoders_buttons["CharcodetoTxtButton"].clicked.connect(self.OpenCharcodetoTextWindow)
         self.ui.encoders_ui.encoders_buttons["ToQPButton"].clicked.connect(self.OpenToQPWindow)
         self.ui.encoders_ui.encoders_buttons["FromQPButton"].clicked.connect(self.OpenFromQPWindow)
+        self.ui.encoders_ui.encoders_buttons["PunycodeEncButton"].clicked.connect(self.OpenPunycodeEncWindow)
+        self.ui.encoders_ui.encoders_buttons["PunycodeDecButton"].clicked.connect(self.OpenPunycodeDecWindow)
 
         # CONVERTERS SECTION BUTTON AND BUTTONS TO OPEN METHODS/ALGORITHMS:
         self.ui.ConvertersButton.clicked.connect            (self.OpenConvertersSection)
@@ -486,6 +488,8 @@ class MainWindow(QMainWindow):
     def OpenCharcodetoTextWindow(self):     self.chrcdtotxt =   CharcodetoTextWindow(self.theme_mode);         self.chrcdtotxt.show()
     def OpenToQPWindow(self):               self.toqp =         ToQuotedPrintableWindow(self.theme_mode);      self.toqp.show()
     def OpenFromQPWindow(self):             self.fromqp =       FromQuotedPrintableWindow(self.theme_mode);    self.fromqp.show()
+    def OpenPunycodeEncWindow(self):        self.punycode =     PunycodeEncodeWindow(self.theme_mode);         self.punycode.show()
+    def OpenPunycodeDecWindow(self):        self.punycode =     PunycodeDecodeWindow(self.theme_mode);         self.punycode.show()
 
     """CONVERTERS SECTION"""
     def OpenConvertersSection(self):        self.ui.stackedWidget.setCurrentWidget(self.ui.converters_ui.ConvertersPage)
