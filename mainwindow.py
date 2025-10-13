@@ -225,6 +225,7 @@ class MainWindow(QMainWindow):
         self.ui.converters_ui.converters_buttons["FromUnixButton"].clicked.connect(self.OpenFromUnixTimestampWindow)
         self.ui.converters_ui.converters_buttons["toNATOButton"].clicked.connect(self.OpenToNatoWindow)
         self.ui.converters_ui.converters_buttons["fromNATOButton"].clicked.connect(self.OpenFromNatoWindow)
+        self.ui.converters_ui.converters_buttons["HexdumpButton"].clicked.connect(self.OpenHexdumpWindow)
 
         # CRYPTANALYSIS SECTION AND BUTTONS TO OPEN METHODS/ALGORITHMS:
         self.ui.CryptanalysisButton.clicked.connect         (self.OpenCryptanalysisSection)
@@ -516,6 +517,7 @@ class MainWindow(QMainWindow):
     def OpenFromUnixTimestampWindow(self):  self.fromunix =     FromUnixTimestampWindow();      self.fromunix.show()
     def OpenToNatoWindow(self):             self.tonato =       ToNatoAlphabet();               self.tonato.show()
     def OpenFromNatoWindow(self):           self.fromnato =     FromNatoAlphabet();             self.fromnato.show()
+    def OpenHexdumpWindow(self):            self.hexdump =      HexdumpWindow();                self.hexdump.show()
 
     """CRYPTANALYSIS SECTION"""
     def OpenCryptanalysisSection(self):     self.ui.stackedWidget.setCurrentWidget(self.ui.cryptanalysis_ui.CryptanalysisPage)

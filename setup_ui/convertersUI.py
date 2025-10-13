@@ -47,7 +47,8 @@ class ConvertersPageUI:
             ("To UNIX Timestamp", "ToUnixButton"),
             ("From UNIX Timestamp", "FromUnixButton"),
             ("to NATO Alphabet", "toNATOButton"),
-            ("from NATO Alphabet", "fromNATOButton")
+            ("from NATO Alphabet", "fromNATOButton"),
+            ("Text to Hexdump", "HexdumpButton")
         ]
 
         self.converters_buttons = {}
