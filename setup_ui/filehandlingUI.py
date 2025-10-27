@@ -51,7 +51,8 @@ class FileHandlingPageUI:
             "File Metadata Extractor",
             "File Hash Generator",
             "Compare File Hashes",
-            "File Steganography Tool"]
+            "File Steganography Tool",
+            "Virus detector"]
 
         object_names = [
             "FernetFileEncButton",
@@ -79,8 +80,8 @@ class FileHandlingPageUI:
             "FileMetadataExtractorButton",
             "HashFilesButton",
             "CompareFileHashesButton",
-            "FileStegToolButton"
-            ]
+            "FileStegToolButton",
+            "VirusDetectorButton"]
 
         self.filehandling_buttons = {}
         start_x = 20

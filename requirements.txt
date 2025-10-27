@@ -36,3 +36,4 @@ des
 androguard
 pyexiftool
 arc4
+yara-python
