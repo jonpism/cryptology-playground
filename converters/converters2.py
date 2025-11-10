@@ -157,12 +157,12 @@ class HextoTextWindow(QWidget):
 
     def hex_to_text_converter(self, input):
         try:
-            hex_values = [h for h in input.split() if h.startswith('0x') and len(h) > 2]
+            hex_values = [h for h in input.split()]
 
             result = ''.join(chr(int(h, 16)) for h in hex_values if 20 < int(h, 16) < 1800)
 
             return result
-        except ValueError as e:
+        except ValueError as ve:
             self.to_text_result_label.setText("Invalid input")
             self.to_text_result_label.show()
 
