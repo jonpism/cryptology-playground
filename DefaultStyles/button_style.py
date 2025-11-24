@@ -9,11 +9,13 @@ help_icon_path = os.path.join(base_dir, 'icons', 'help_icon.png').replace("\\", 
 settings_icon_path = os.path.join(base_dir, 'icons', 'settings_icon.png').replace("\\", "/")
 sound_on_icon_path = os.path.join(base_dir, 'icons', 'sound_icon_on.png').replace("\\", "/")
 sound_off_icon_path = os.path.join(base_dir, 'icons', 'sound_icon_off.png').replace("\\", "/")
+terminal_icon_path = os.path.join(base_dir, 'icons', 'terminal_icon_white.png').replace("\\", "/")
 # icons for light mode
 help_icon_black_path = os.path.join(base_dir, 'icons', 'help_icon_black.png').replace("\\", "/")
 settings_icon_black_path = os.path.join(base_dir, 'icons', 'settings_icon_black.png').replace("\\", "/")
 sound_on_icon_black_path = os.path.join(base_dir, 'icons', 'sound_icon_on_black.png').replace("\\", "/")
 sound_off_icon_black_path = os.path.join(base_dir, 'icons', 'sound_icon_off_black.png').replace("\\", "/")
+terminal_icon_black_path = os.path.join(base_dir, 'icons', 'terminal_icon_black.png').replace("\\", "/")
 
 class DefaultMenuButtonStyle(QtWidgets.QPushButton):
 
@@ -88,6 +90,12 @@ class DefaultButtonStyle(QtWidgets.QPushButton):
             self.setStyleSheet(self.get_help_style(dark=True))
         else:  # light
             self.setStyleSheet(self.get_help_style(dark=False))
+    
+    def update_theme_terminal(self, theme_name):
+        if theme_name == "dark":
+            self.setStyleSheet(self.get_terminal_style(dark=True))
+        else:  # light
+            self.setStyleSheet(self.get_terminal_style(dark=False))
     
     def update_theme_music_on(self, theme_name):
         if theme_name == "dark":
@@ -179,6 +187,28 @@ class DefaultButtonStyle(QtWidgets.QPushButton):
     @staticmethod
     def get_settings_style(dark=True):
         icon_path = settings_icon_path if dark else settings_icon_black_path
+        return f"""
+        QPushButton {{
+        border-radius: 25px;
+        border: 2px solid #5D6D7E;
+        padding: 5px;
+        min-width: 16px;
+        min-height: 16px;
+        image: url({icon_path});
+        }}
+        QPushButton:hover {{
+            background-color: grey;
+        }}
+        QPushButton:pressed {{
+            background-color: #839192;
+        }}
+        QPushButton:checked {{
+            background-color: #5D6D7E;
+        }}"""
+
+    @staticmethod
+    def get_terminal_style(dark=True):
+        icon_path = terminal_icon_path if dark else terminal_icon_black_path
         return f"""
         QPushButton {{
         border-radius: 25px;

@@ -5,6 +5,7 @@ from ui_MainWindow  import Ui_MainWindow
 from asymmetric import *; from symmetric    import *; from ciphers      import *; from hashingalgo  import *
 from encoders   import *; from converters   import *; from fileHandling import *; from othertools   import *
 from section_titles_and_texts_about import *; from cryptanalysis import *
+from terminal_window import TerminalWindow
 
 class MainWindow(QMainWindow):
 
@@ -13,6 +14,11 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.theme_mode = "dark"
         self.ui.setupUi(self, theme_mode=self.theme_mode)
+
+        # terminal button
+        self.TerminalButton = DefaultButtonStyle("", parent=self, command=self.OpenTerminalWindow)
+        self.TerminalButton.setGeometry(250, 25, 50, 50)
+        self.TerminalButton.setStyleSheet(self.TerminalButton.get_terminal_style())
 
         # Music player/button setup
         self.player = QMediaPlayer(self)
@@ -358,6 +364,7 @@ class MainWindow(QMainWindow):
         
         self.SettingsButton.update_theme_settings(theme_name)
         self.HelpButton.update_theme_help(theme_name)
+        self.TerminalButton.update_theme_terminal(theme_name)
         if not self.music_playing:
             self.MusicButton.update_theme_music_off(self.theme_mode)
         else:
@@ -386,6 +393,7 @@ class MainWindow(QMainWindow):
     def OpenHomePageSection(self):          self.ui.stackedWidget.setCurrentWidget(self.ui.homepage_ui.HomePage)
     def OpenHelpPage(self):                 self.ui.stackedWidget.setCurrentWidget(self.ui.help_ui.HelpPage)
     def OpenSettingsPage(self):             self.ui.stackedWidget.setCurrentWidget(self.ui.settings_ui.SettingsPage)
+    def OpenTerminalWindow(self):           self.terminal_window = TerminalWindow();         self.terminal_window.show()
 
     """ASYMMETRIC SECTION"""
     def OpenAsymmetricSection(self):        self.ui.stackedWidget.setCurrentWidget(self.ui.asymmetric_ui.AsymmetricPage)
