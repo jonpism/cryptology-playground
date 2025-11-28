@@ -35,29 +35,33 @@ class TerminalWindow(QWidget):
         self.process = QProcess(self)
         self.process.setProcessChannelMode(QProcess.ProcessChannelMode.MergedChannels)
         self.process.readyReadStandardOutput.connect(self.handle_output)
+        self.process.finished.connect(self.process_finished)
         
-        self.output_area.appendPlainText(f">>> Terminal initialized at: {os.getcwd()}")
+        self.output_area.appendHtml(f'<span style="color: #00FF00;">>>> Terminal initialized at: {os.getcwd()}</span>')
 
     def run_command(self):
         command = self.input_line.text().strip()
         if not command:
             return
 
-        self.output_area.appendPlainText(f"$ {command}")
+        cmd_html = f'<span style="color: #00FF00;">$ {command}</span><br>'
+        self.output_area.appendHtml(cmd_html)
         self.input_line.clear()
 
         if command.startswith("cd "):
             path = command[3:].strip()
             try:
                 os.chdir(path)
-                self.output_area.appendPlainText(f"Directory changed to: {os.getcwd()}")
+                self.output_area.appendHtml(f'<span style="color: #00FF00;">Directory changed to: {os.getcwd()}</span><br>')
             except FileNotFoundError:
-                self.output_area.appendPlainText(f"Error: Cannot find the path specified: {path}")
+                self.output_area.appendHtml(f'<span style="color: #FF0000;">Error: Cannot find the path specified: {path}</span><br>')
             return
 
         if command.lower() in ["cls", "clear"]:
             self.output_area.clear()
             return
+        
+        self.process.setWorkingDirectory(os.getcwd())
 
         if sys.platform == "win32": # windows
             # cmd.exe /C for internal commands
@@ -73,3 +77,6 @@ class TerminalWindow(QWidget):
         
         scrollbar = self.output_area.verticalScrollBar()
         scrollbar.setValue(scrollbar.maximum())
+
+    def process_finished(self):
+        self.handle_output()
