@@ -37,3 +37,4 @@ androguard
 pyexiftool
 arc4
 yara-python
+puremagic
