@@ -20,6 +20,7 @@ from .file_hash_generator       import HashFilesWindow
 from .compare_hashes            import CompareFileHashesWindow
 from .file_steganography        import FileStegToolWindow
 from .detect_virus              import VirusDetectorWindow
+from .log_analyzer              import LogAnalyzerWindow
 
 __all__ = ["FernetFileEncWindow", "FernetFileDecWindow", "CSVtoJSONWindow", "JSONtoCSVWindow",
            "Img2PDFWindow", "PDF2ImgWindow", "ExifImageWindow", "ZipFileWithPwdWindow",
@@ -28,4 +29,4 @@ __all__ = ["FernetFileEncWindow", "FernetFileDecWindow", "CSVtoJSONWindow", "JSO
            "JSONtoXMLWindow", "XMLtoJSONWindow", "PyCodeDisassemblerWindow", "PGPEncryptWindow",
            "FileTypeDetectorWindow", "PGPDecryptWindow", "DecodeTXTFilesWindow", "xxdHexDumpWindow",
            "FileMetadataExtractorWindow", "HashFilesWindow", "CompareFileHashesWindow", "FileStegToolWindow",
-           "VirusDetectorWindow"]
+           "VirusDetectorWindow", "LogAnalyzerWindow"]

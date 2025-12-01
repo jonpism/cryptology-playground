@@ -301,6 +301,7 @@ class MainWindow(QMainWindow):
         self.ui.filehandling_ui.filehandling_buttons["CompareFileHashesButton"].clicked.connect(self.OpenCompareFileHashesWindow)
         self.ui.filehandling_ui.filehandling_buttons["FileStegToolButton"].clicked.connect(self.OpenFileStegToolWindow)
         self.ui.filehandling_ui.filehandling_buttons["VirusDetectorButton"].clicked.connect(self.OpenVirusDetectorWindow)
+        self.ui.filehandling_ui.filehandling_buttons["LogAnalyzerButton"].clicked.connect(self.OpenLogAnalyzerWindow)
 
         # OTHER TOOLS SECTION AND BUTTONS TO OPEN METHODS/ALGORITHMS:
         self.ui.OtherToolsButton.clicked.connect            (self.OpenOtherToolsSection)
@@ -584,6 +585,7 @@ class MainWindow(QMainWindow):
     def OpenCompareFileHashesWindow(self):  self.comparehashes = CompareFileHashesWindow(self.theme_mode);     self.comparehashes.show()
     def OpenFileStegToolWindow(self):       self.filesteg =     FileStegToolWindow(self.theme_mode);           self.filesteg.show()
     def OpenVirusDetectorWindow(self):      self.virusdetect =  VirusDetectorWindow(self.theme_mode);          self.virusdetect.show()
+    def OpenLogAnalyzerWindow(self):        self.loganalyzer =  LogAnalyzerWindow(self.theme_mode);            self.loganalyzer.show()
 
     """OTHER TOOLS SECTION"""
     def OpenOtherToolsSection(self):        self.ui.stackedWidget.setCurrentWidget(self.ui.othertools_ui.OtherToolsPage)        
