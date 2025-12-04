@@ -59,7 +59,7 @@ class OtherToolsPageUI:
             ("JWT Verify", "JWTVerifyButton"),
             ("JWT Decode", "JWTDecodeButton"),
             ("Generate QR Code", "QRCodeGenButton"),
-        ]
+            ("Reverse Image Search", "ReverseImageSearchButton")]
 
         self.other_tools_buttons = {}
         start_x = 20

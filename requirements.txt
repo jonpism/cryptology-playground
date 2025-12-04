@@ -38,3 +38,4 @@ pyexiftool
 arc4
 yara-python
 puremagic
+serpapi

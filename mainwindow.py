@@ -344,6 +344,7 @@ class MainWindow(QMainWindow):
         self.ui.othertools_ui.other_tools_buttons["JWTVerifyButton"].clicked.connect(self.OpenJWTVerifyWindow)
         self.ui.othertools_ui.other_tools_buttons["JWTDecodeButton"].clicked.connect(self.OpenJWTDecodeWindow)
         self.ui.othertools_ui.other_tools_buttons["QRCodeGenButton"].clicked.connect(self.OpenGenQRcodeWindow)
+        self.ui.othertools_ui.other_tools_buttons["ReverseImageSearchButton"].clicked.connect(self.OpenReverseImageSearchWindow)
 
     def handle_checked(self, button):
         buttons = [
@@ -622,6 +623,7 @@ class MainWindow(QMainWindow):
     def OpenJWTVerifyWindow(self):          self.jwtverify =    JWTVerifyWindow(self.theme_mode);              self.jwtverify.show()
     def OpenJWTDecodeWindow(self):          self.jwtdecode =    JWTDecodeWindow(self.theme_mode);              self.jwtdecode.show()
     def OpenGenQRcodeWindow(self):          self.generateqr =   GenerateQRcode(self.theme_mode);               self.generateqr.show()
+    def OpenReverseImageSearchWindow(self): self.revimgsearch = ReverseImageSearchWindow(self.theme_mode);     self.revimgsearch.show()
 
 try:
     if __name__ == "__main__":

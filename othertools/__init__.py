@@ -30,6 +30,7 @@ from .jwt_sign              import JWTSignWindow
 from .jwt_verify            import JWTVerifyWindow
 from .jwt_decode            import JWTDecodeWindow
 from .generateQRcode        import GenerateQRcode
+from .reverse_image_search  import ReverseImageSearchWindow
 
 __all__ = [
     "XOROperationWindow", "OneTimePadWindow", "ScryptWindow", "PRNGWindow", 
@@ -41,4 +42,4 @@ __all__ = [
     "DataCompressionWindow", "RandomnessTesterWindow", "ShowOnMap2Window", 
     "PGPKeyPairGenerateWindow", "DSAKeyPairGenerateWindow", "EdDSAKeyPairWindow",
     "LoremIpsumGenerateWindow", "ModCalculatorWindow", "JWTSignWindow", "JWTVerifyWindow",
-    "JWTDecodeWindow", "GenerateQRcode"]
+    "JWTDecodeWindow", "GenerateQRcode", "ReverseImageSearchWindow"]
