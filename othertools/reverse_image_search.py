@@ -1,4 +1,6 @@
-from PyQt6.QtWidgets                import QWidget, QMessageBox, QTextEdit, QHBoxLayout, QVBoxLayout, QDialog, QLabel, QLineEdit, QPushButton
+from PyQt6.QtWidgets                import (QWidget, QMessageBox, QHBoxLayout, 
+                                            QVBoxLayout, QDialog, QLabel, QLineEdit, 
+                                            QPushButton, QTextBrowser)
 from DefaultStyles.button_style     import DefaultButtonStyle, DefaultAboutButtonStyle
 from DefaultStyles.qline_edit_style import DefaultQLineEditStyle
 import serpapi
@@ -17,7 +19,7 @@ class ReverseImageSearchWindow(QWidget):
             <ul>
                 <li>Paste the image URL in the "Paste URL" field.</li>
                 <li>Click "Submit" to perform the reverse image search.</li>
-                <li>Click You must enter your API key from SerpAPI, after signing up.</li>
+                <li>You must enter your API key from SerpAPI, after signing up.</li>
                 <li>The results will appear below with clickable links to sources.</li>
             </ul>
             <p><b>Features:</b></p>
@@ -40,9 +42,10 @@ class ReverseImageSearchWindow(QWidget):
         search_button = DefaultButtonStyle("Submit", parent=self, bold=True, command=self.reverse_img_search_operation)
         search_button.setGeometry(530, 50, 150, 50)
 
-        self.output_label = QTextEdit(parent=self)
+        self.output_label = QTextBrowser(parent=self)
         self.output_label.setGeometry(10, 130, 680, 500)
         self.output_label.setReadOnly(True)
+        self.output_label.setOpenExternalLinks(True)
 
         # About button setup
         self.aboutButton = DefaultAboutButtonStyle("", parent=self, txt=msgbox_txt, title=msgbox_title, geometry=(650, 650, 50, 50))
